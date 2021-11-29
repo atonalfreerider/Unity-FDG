@@ -28,8 +28,8 @@ namespace FDG
         /// All of the nodes in the graph. While running, the forces acting on the nodes will move the transform that
         /// is associated with that node.
         /// </summary>
-        readonly Dictionary<int, Node> nodes = new Dictionary<int, Node>();
-        readonly Dictionary<int, int> idToIndexMap = new Dictionary<int, int>();
+        readonly Dictionary<int, Node> nodes = new();
+        readonly Dictionary<int, int> idToIndexMap = new();
 
         bool backgroundCalculation = false;
 
@@ -259,7 +259,7 @@ namespace FDG
                 edgeIndices[i] = allEdges[i];
             }
 
-            BalanceForceJob balanceForceJob = new BalanceForceJob
+            BalanceForceJob balanceForceJob = new()
             {
                 NodePositions = nodePositions,
                 NodeMasses = nodeMasses,
@@ -355,7 +355,7 @@ namespace FDG
             public float Mass;
             public bool IsImmobile = false;
             public Vector3 VirtualPosition = Vector3.zero;
-            public readonly List<int> MyEdges = new List<int>();
+            public readonly List<int> MyEdges = new();
 
             public MovementCallback movementCallback;
         }
