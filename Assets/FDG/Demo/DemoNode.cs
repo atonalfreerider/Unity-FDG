@@ -5,7 +5,7 @@ namespace FDG.Demo
 {
     class DemoNode : MonoBehaviour
     {
-        public readonly List<DemoEdge> MyEdges = new List<DemoEdge>();
+        public readonly List<DemoEdge> MyEdges = new();
 
         public static DemoNode New(string nodeName)
         {
