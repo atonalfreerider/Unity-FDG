@@ -183,11 +183,11 @@ namespace FDG
                     }
 
                     yield return null;
-                    yield return Iterate();
+                    graphAnimator = StartCoroutine(Iterate());
                 }
                 else
                 {
-                    yield return Iterate(remainingIterations - 1);
+                    graphAnimator = StartCoroutine(Iterate(remainingIterations - 1));
                 }
             }
             else
